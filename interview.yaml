@@ -1,0 +1,110 @@
+Here are 15 common TypeScript interview questions ranging from beginner to advanced:
+
+Beginner
+What is TypeScript and how does it differ from JavaScript?
+TypeScript is a superset of JavaScript that adds static types.
+It provides type safety and better tooling support compared to JavaScript.
+
+What are the basic types in TypeScript?
+Basic types include number, string, boolean, null, undefined, and any.
+
+How do you declare a variable with a specific type in TypeScript?
+Example: let age: number = 30;
+
+What is an interface in TypeScript?
+An interface is a way to define a contract for
+classes or objects, specifying what properties and methods they should have.
+
+What is the purpose of type and interface in TypeScript?
+Both type and interface are used to define shapes of objects and functions.
+Interfaces are preferred for
+defining object structures
+and extending classes,
+while type is more flexible and can define complex union and intersection types.
+
+Intermediate
+
+What are TypeScript enums and how are they used?
+Enums are a way to define a set of named constants. They can be numeric or string-based.
+
+Explain the concept of union types in TypeScript.
+Union types allow a variable to be one of several types. Example: let value: number | string;
+
+How do you handle optional properties in TypeScript?
+Optional properties are declared with a question mark ?
+ after the property name. Example: interface User { name: string; age?: number; }
+
+What are generics in TypeScript and why are they useful?
+
+Generics allow you to create reusable components that
+can work with any data type. They help in maintaining type safety while writing reusable code.
+
+What is type inference in TypeScript?
+Type inference is TypeScript's ability to automatically deduce the type of a variable based on its value.
+
+
+Advanced
+
+What are type guards and how do they work?
+
+Type guards are functions or constructs that help TypeScript
+narrow down the type of a variable within a conditional block.
+
+Explain TypeScript’s type mapping and utility types like Partial, Pick, and Record.
+Partial makes all properties optional, Pick selects a subset of properties,
+ and Record creates a type with specified keys and values.
+
+How does TypeScript handle module resolution and what are the different strategies available?
+TypeScript handles module resolution based on configuration options 
+like baseUrl, paths, and moduleResolution. Strategies include Node.js and Classic.
+
+What are declaration files (.d.ts) and how are they used?
+Declaration files provide type information about JavaScript
+libraries. They help TypeScript understand types from non-TypeScript code.
+
+How do you work with advanced types like mapped types and conditional types in TypeScript?
+Mapped types create new types by transforming existing ones,
+ while conditional types provide a way to define
+  types based on conditions. Example of conditional type:
+   type TrueFalse<T> = T extends true ? 'Yes' : 'No';
+
+
+what is tuples why we use and what is loophole
+
+
+What is a tuple in TypeScript and how do you use it?
+A tuple is a special type of array in TypeScript that allows you to define an
+ array with a fixed number of elements, each with a specific type.
+ Tuples are useful when you need a heterogeneous collection of values.
+
+let person: [string, number] = ["Alice", 30];
+Here, person is a tuple with a string and a number.
+
+Why do we use tuples in TypeScript?
+Tuples provide a way to describe arrays with different types of elements.
+They are useful for representing fixed structures with
+known types, such as a pair of values or function return types with multiple values.
+
+Advanced
+What is a potential loophole or limitation when using tuples in TypeScript?
+
+Length and Type Enforcement: Tuples are strictly typed but do not enforce the 
+length or the exact order of elements beyond the defined types.
+If the number of elements or the type order deviates from what’s 
+defined, TypeScript will flag it, but at runtime, you might not have strong guarantees.
+
+Immutability: Tuples are mutable by default.
+ This can be problematic if you expect a fixed structure 
+ to remain unchanged after initialization.
+
+Complex Manipulation: Performing operations 
+like sorting or filtering can be more
+ complex with tuples because their structure
+  is fixed and strictly typed. You may need additional handling to ensure type safety.
+
+Example of Tuple Loophole:
+
+let person: [string, number] = ["Alice", 30];
+person[2] = "New Value"; // TypeScript allows this assignment but it goes beyond the defined tuple length.
+Tuples are very powerful, but it's essential to 
+be mindful of their limitations and ensure they fit well with your use case.
